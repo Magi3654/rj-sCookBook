@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ's Unofficial Cooking Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img class="rjlogo" src="rjchurro.png" alt="" >
+        </div>
+        <div class="header__title">
+            <h1>RJ's Unofficial Cooking Book</h1>
+        </div>
+        
+    </header>
+       
+    <main class="main">
+        <form action=""onclick="searchRecipe(event)">
+            <input type="text" class="main__input" >
+            <button class="main__button" ">Buscar Receta</button>
+        </form>
+        
+        <div class="recetas">
+            <div id="recipe-card" class="card">
+                <div class="face front">
+                    <img id="data-recipe-img" class="img-container"src="descarga.png" alt="">
+                    <h3 id="data-recipe-name"></h3>
+                </div>
+                    <div class="face back">
+                        <h3>Ramen</h3>
+                        <p id="data-recipe-full" class="recipe-full">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Et dicta mollitia beatae blanditiis, rem, dolores, ipsa eligendi sequi 
+                            ullam cum vitae perferendis. Ratione minus vitae exercitationem 
+                            animi architecto porro at?</p>
+                            <div class="link">
+                                <a href="#">Ver Receta</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img id="data-recipe-img" class="img-container"src="descarga.png" alt="">
+                        <h3>Bibimbap</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Bibimbap</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Et dicta mollitia beatae blanditiis, rem, dolores, ipsa eligendi sequi 
+                            ullam cum vitae perferendis. Ratione minus vitae exercitationem 
+                            animi architecto porro at?</p>
+                            <div class="link">
+                                <a href="#">Ver Receta</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face front">
+                        <img id="data-recipe-img" class="img-container"src="descarga.png" alt="">
+                        <h3>Ttoppokki</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Ttoppokki</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Et dicta mollitia beatae blanditiis, rem, dolores, ipsa eligendi sequi 
+                            ullam cum vitae perferendis. Ratione minus vitae exercitationem 
+                            animi architecto porro at?</p>
+                            <div class="link">
+                                <a href="#">Ver Receta</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    
+    <footer class="footer">
+        <p>copyright &copy;2022</p>
+    </footer>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>

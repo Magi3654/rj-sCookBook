@@ -1,57 +1,46 @@
 'use strict'
 
-const recipeCard=document.getElementById('recipe-card');
-const recipeName=document.getElementById('data-recipe-name');
-const recipeImg=document.getElementById('data-recipe-img');
-const recipeImgContainer=document.getElementById('data-recipe-img-container');
-const recipeFull=document.getElementById('data-recipe-full');
-const button=document.querySelector('main__button');
-const input=document.querySelector('main__input');
+import { forkSearch } from "./fetch.js ";
 
-//button.addEventListener('click',(event)=>{
-  //  event.preventDefault();
-    //searchRecipe(main__input.value);
-//})
-
-const renderRecipeData=data=>{
-    const image=data.image_url;
-    const{stats}=data;
-
-    recipeName.textContent=data.name;
-    recipeImg.setAttribute('src',image);
-    renderRecipeFull(stats);
-}
-
-const renderRecipeFull=stats=>{
-    recipeStats.innerHTML='';
-    stats.forEach(stat => {
-        const statElement=document.createElement("div");
-        const statElementName=document.createElement("div");
-        const statElementAmount=docuemet.createElement("div");
-        statElementName.textContent=stat.stat.title;
-        statElementAmount.textContent=stat.base_stat;
-        statElement.appendChild(statElementName);
-        statElement.appendChild(statElementAmount);
-        recipeFull.appendChild(statElement);
+async function showRecipe(){
+    const recipes=document.getElementById('recipes');
+    const search=document.getElementById('search').value;
+    const cookingbook=await comeRecipes(search);
+    cookingbook.data.cookingbook.map(recipe=>{
+        console.log(recipe.title);
         
-    });
+        const recipeName=document.createElement('p');
+        recipeName.texcontent=recipe.title;
+        const imgRecipe=document.createElement('img');
+        imgRecipe.src=recipe.image_url;
+        imgRecipe.alt=recipe.name;
+        imgRecipe.style.widows="95px";
+
+        recipes.append(imgRecipe);
+        recetas.append(recipeName);
+    })
 }
 
-const renderNotFound=()=>{
-    recipeName.textContent='Oh NO!- Receta no encontrada'
-    recipeImg.setAttribute('src','descarga.png');
-    recipeImg.style.background= '#fff';
-
+async function comeRecipes(data){
+    return await forkSearch(data.toLowerCase());
 }
 
-const searchRecipe=async(event)=>{
-    event.preventDefatult();
-    try{
-        const value=event.target.querySelector('imput').value;
-        const respose=await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?sarch=${value.toLowerCase()}`)
-        const data=await response.json();
-        renderRecipeData(data);
-    } catch{
-        renderNotFound()
-    }
+async function cleanData(){
+    search.value="";
+    recipes.remove();
 }
+
+const cookingBook= document.getElementById('cookingBook');
+const buscar= document.createElement('input');
+buscar.id= "search";
+buscar.style.width= "185px";
+const boton= document.createElement('button');
+boton.textContent= "RJ's Search";
+boton.onclick= showRecipe;
+const clean= document.createElement('button');
+clean.textContent= "Clean";
+clean.onclick= cleanData;
+
+cookingBook.append(buscar);
+cookingBook.append(boton);
+cookingBook.append(clean);

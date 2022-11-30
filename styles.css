@@ -18,6 +18,7 @@ html{
 body{
     background-color: var(--color-letra-texto);
     box-sizing: border-box;
+    font-size: 62.5%;
 }
 .header{
     height: 10rem;
@@ -45,6 +46,63 @@ body{
     align-items: center;
 }
 
+input::placeholder{
+    top:39%;
+}
+p{
+    font-size: 1.5rem;
+    font-family: 'Nerko One';
+
+}
+h3{
+    font-family: 'Nerko One';
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.clean{
+    font-size: 2rem;
+    width: 5%;
+    height: 4rem;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--color-fondo);
+}
+
+.cookingBook{
+    color: var(--color-letra-titulo);
+    background-color: var(--color-busqueda);
+    font-size: 2rem;
+    height: 80%;
+    display: flex; 
+    flex-direction: column; /*Darle dirección a los elementos*/
+    justify-content: left;
+    align-items: left; /*Alinear los elementos*/
+    margin: 3rem;
+    padding: 4rem;
+}
+.popular{
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.recipes{
+    display: grid;
+    grid-template-columns: repeat(5,10rem 2fr);
+    grid-template-rows: repeat(auto-fill, 12rem 2fr);
+    gap: 1em;
+    margin: 2rem;
+    align-items: center;
+}
+
+.recipes grid{
+    border: 1px solid var(--color-fondo-oscuro);
+}
+/*
 .main{
     font-size: 2rem;
     background-color: var(--color-fondo-oscuro);
@@ -165,7 +223,15 @@ body{
 }
 .card:hover .back{
     transform: perspective(600px) rotateY(360deg);
+}*/
+
+imput::placeholder{
+    top:39%;
+
 }
+
+
+
 .footer{
     height: 40vh;
     font-size: 2rem;
